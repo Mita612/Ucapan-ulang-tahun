@@ -7,70 +7,97 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(45deg, #83a4d4, #b6fbff);
+            animation: backgroundAnimation 10s ease infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
             text-align: center;
-            background-color: #e6f7ff;
-            padding: 20px;
+            background-color: rgba(230, 247, 255, 0.9);
+            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             max-width: 600px;
-            opacity: 0.95;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
             color: #0073e6;
             font-size: 3rem;
+            animation: textGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 115, 230, 0.7), 0 0 20px rgba(0, 115, 230, 0.4);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 115, 230, 1), 0 0 30px rgba(0, 115, 230, 0.7);
+            }
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #333;
+            margin-bottom: 20px;
         }
 
         .btn {
-            background-color: #0073e6;
+            background-image: linear-gradient(45deg, #0073e6, #00c6ff);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 1rem;
-            margin-top: 20px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .btn:hover {
-            background-color: #005bb5;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         .hidden-message {
             display: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #ff6600;
             margin-top: 20px;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
 
         .visible {
             display: block;
             opacity: 1;
+            transform: translateY(10px);
         }
+
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Happy Level Up Day, Bro!</h1>
-        <p>Hai Bro! Doanya panjang umur, sehat selalu, murah rezeki, tetap semangat kuliah, bahagia terus dan semoga apa yang dicita-citakan diumur baru tercapai. Semangat terus harapan keluarga. Kuat-kuat pundaknya. Semoga tahun ini membawa lebih banyak petualangan hebat dan kenangan tak terlupakan!</p>
+        <p>Hai Bro! Doanya panjang umur, sehat selalu, murah rezeki, tetap semangat kuliah, bahagia terus dan semoga apa yang dicita-citakan di umur baru tercapai. Semangat terus harapan keluarga. Kuat-kuat pundaknya. Semoga tahun ini membawa lebih banyak petualangan hebat dan kenangan tak terlupakan!</p>
         <button class="btn" onclick="tampilkanUcapan()">Jangan lupa KLIK di sini ! 🎉</button>
         <p id="ucapan" class="hidden-message">Maaf cuma bisa ngasih ini. Sama mau ngingetin juga semoga sidangnya nanti lancar. UTS-nya juga lancar dapet nilai bagus. Jangan lupa doain gue juga. Ingat, kita cuma beda sehari doang! GOOD LUCK, BRO.....🎂🎉</p>
     </div>
