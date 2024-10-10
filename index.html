@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Brother!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #e6f7ff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            opacity: 0.95;
+        }
+
+        h1 {
+            color: #0073e6;
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
+        }
+
+        .hidden-message {
+            display: none;
+            font-size: 1.2rem;
+            color: #ff6600;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .visible {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Level Up Day, Bro!</h1>
+        <p>Hai Bro! Doanya panjang umur, sehat selalu, murah rezeki, tetap semangat kuliah, bahagia terus dan semoga apa yang dicita-citakan diumur baru tercapai. Semangat terus harapan keluarga. Kuat-kuat pundaknya. Semoga tahun ini membawa lebih banyak petualangan hebat dan kenangan tak terlupakan!</p>
+        <button class="btn" onclick="tampilkanUcapan()">Jangan lupa KLIK di sini ! 🎉</button>
+        <p id="ucapan" class="hidden-message">Maaf cuma bisa ngasih ini. Sama mau ngingetin juga semoga sidangnya nanti lancar. UTS-nya juga lancar dapet nilai bagus. Jangan lupa doain gue juga. Ingat, kita cuma beda sehari doang! GOOD LUCK, BRO.....🎂🎉</p>
+    </div>
+
+    <script>
+        function tampilkanUcapan() {
+            var ucapan = document.getElementById("ucapan");
+            ucapan.classList.add("visible");
+        }
+    </script>
+</body>
+</html>
